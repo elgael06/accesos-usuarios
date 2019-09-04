@@ -1,0 +1,51 @@
+
+.App{
+    border-radius:3px;
+    height: 90%;
+    min-height: 700px;
+    border:1px #cfcfd3 solid;
+    padding: 10px;
+  
+  }
+  
+  .rotate {
+    -webkit-animation: 2s rotate linear infinite;
+    animation: 2s rotate linear infinite;
+    -webkit-transform-origin: 50% 50%;
+    transform-origin: 50% 50%;
+    margin-right: 10px;
+  }
+  
+  @keyframes rotate {
+    from {
+      transform: rotate(0deg);
+    }
+    to {
+      transform: rotate(660deg);
+    }
+  }
+  
+  .animate {
+    -webkit-animation: animatezoom 0.6s;
+    animation: animatezoom 0.6s
+  }
+  
+  @-webkit-keyframes animatezoom {
+    from {
+        -webkit-transform: scale(.2)
+    }
+  
+    to {
+        -webkit-transform: scale(1)
+    }
+  }
+  
+  @keyframes animatezoom {
+    from {
+        transform: scale(.2)
+    }
+  
+    to {
+        transform: scale(1)
+    }
+  }
