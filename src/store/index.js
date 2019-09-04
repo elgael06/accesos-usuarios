@@ -5,6 +5,7 @@ import reducers from '../reducers';
 
 const initialState ={
     usuarios:[],
+    carga_usuarios:false,
     usuario:{},
     edicion:false,
     vista_accesos:false,

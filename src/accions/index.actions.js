@@ -1,4 +1,4 @@
-import { CHANGE_FILTRO, ADD_USERS, SELECT_USER, EDICION, SHOW_ACCESSO, ADD_ACCESOS } from "../reducers/types.reducers";
+import { CHANGE_FILTRO, ADD_USERS, SELECT_USER, EDICION, SHOW_ACCESSO, ADD_ACCESOS, STATE_USERS } from "../reducers/types.reducers";
 
 /**
  ** actions
@@ -11,6 +11,10 @@ export const cambiar_filtro = filtro =>({
 export const agregar_usuarios = usuarios=>({
     type:ADD_USERS,
     usuarios
+});
+export const cargando_usuarios = estado =>({
+    type:STATE_USERS,
+    estado
 });
 
 export const seleccionar_usuario = usuario=>({

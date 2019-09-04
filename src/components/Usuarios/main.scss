@@ -1,0 +1,29 @@
+
+#contenedor-usuarios{
+    padding: 10px;
+    margin: 10px 10px 10px 10px; 
+    height: 500px;
+    overflow-y: auto;
+    article{
+        width: 390px;
+        img{
+            height: 180px;
+            border-radius: 5px;
+        }
+    }
+    .contenedor-folios>div{
+        display: inline-block;
+        .input{
+            text-align: right;
+        }
+    }
+    .buttons{
+        margin-top: 20px;
+        .is-primary{
+            float: right;
+        }
+        .is-info{
+            float: left;
+        }
+    }
+}

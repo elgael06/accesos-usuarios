@@ -7,7 +7,8 @@ import {
                 SELECT_USER, 
                 EDICION, 
                 SHOW_ACCESSO, 
-                ADD_ACCESOS 
+                ADD_ACCESOS, 
+                STATE_USERS
             } from "./types.reducers";
 
 /***
@@ -15,6 +16,7 @@ import {
  ***/
 const filtro_usuario     = ( state=""     , actions) => actions.type === CHANGE_FILTRO     ? actions.filtro     : state;
 const usuarios              = (state=[]      , actions) => actions.type === ADD_USERS             ? actions.usuarios : state;
+const carga_usuarios   = (state=false , actions) => actions.type === STATE_USERS         ? actions.estado   : state;
 const usuario                = (state={}      , actions) => actions.type === SELECT_USER          ? actions.usuario  : state;
 const edicion                = (state=false , actions) => actions.type === EDICION                  ? actions.estatus  : state;
 const vista_accesos     = (state=false , actions) => actions.type === SHOW_ACCESSO     ? actions.estatus  : state;
@@ -23,6 +25,7 @@ const accesos               = ( state=[]     , actions) => actions.type === ADD_
 const reducers = combineReducers({
     filtro_usuario,
     usuarios,
+    carga_usuarios,
     usuario,
     edicion,
     vista_accesos,
