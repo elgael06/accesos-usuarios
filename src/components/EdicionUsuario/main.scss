@@ -1,0 +1,21 @@
+#edicion-modal{
+    padding: 5px;
+    figure{
+        padding: 15px;
+    }
+    img{
+        border-radius: 5px;
+        max-height: 135px;
+    }
+}
+#modal-edicion{
+    width: 500px;
+    border-radius: 5px;
+    .cavecera-modal{
+        background: #ceaaaa;
+        border-radius: 5px;
+        u{
+            color: black
+        }
+    }
+}

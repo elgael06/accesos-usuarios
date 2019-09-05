@@ -14,7 +14,7 @@ const mapDispatchToProps =dispatch=>({
         dispatch(seleccionar_usuario(usuario))
     },
     evTipo(tipo){
-        let accceso = tipo ==="Edicion", edicion = tipo==="Accesos";
+        let  edicion= tipo ==="Edicion", accceso = tipo==="Accesos";
         dispatch(cambio_edicion(edicion))
         dispatch(cambio_vista_acceso(accceso))
     }
