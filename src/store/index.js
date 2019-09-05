@@ -11,6 +11,7 @@ const initialState ={
     vista_accesos:false,
     accesos:[],
     filtro_usuario:"",
+    estado_accesos:false
 }
 
 const store = createStore(reducers,initialState);

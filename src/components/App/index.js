@@ -9,6 +9,7 @@ import './App.scss';
 import Header from '../header';
 import Usuarios from '../../containers/Usuarios.container'
 import EdicionUsuario from '../../containers/EdicionUsuario.container'
+import EdicionAccesos from '../../containers/EdicionAccesos.container'
 import BarraFiltro from '../../containers/BarraFiltro.container'
 
 function App() {
@@ -18,6 +19,7 @@ function App() {
       <BarraFiltro/>
       <Usuarios />
       <EdicionUsuario/>
+      <EdicionAccesos />
     </div>
   );
 }

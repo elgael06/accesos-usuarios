@@ -13,3 +13,5 @@ export const SELECT_USER       = "SELECT_USER";
 export const EDICION               = "EDICION";
 export const SHOW_ACCESSO  = "SHOW_ACCESSO";
 export const ADD_ACCESOS      = "ADD_ACCESOS";
+export const CHANGE_ACCESO = "CHANGE_ACCESO";
+export const STATE_ACCESOS = "STATE_ACCESOS";

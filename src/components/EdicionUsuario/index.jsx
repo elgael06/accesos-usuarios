@@ -60,6 +60,7 @@ const EdicionUsuario =({mostrar,usuario,evCerrar,cambiar})=>{
                     <i className="fa fa-envelope"></i>
                 </span>
             </div>
+            
             <div className="columns m-1">
                 <span className="column p-1">
                     <i className="button is-primary is-fullwidth float-left fa fa-save" onClick={onGuardar}> Guardar.</i>

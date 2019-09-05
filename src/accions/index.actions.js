@@ -9,7 +9,8 @@ import {
     CHANGE_ID,
     CHANGE_NOMBRE,
     CHANGE_COMPLETO,
-    CHANGE_EMAIL
+    CHANGE_EMAIL,
+    CHANGE_ACCESO
 } from "../reducers/types.reducers";
 
 /**
@@ -67,4 +68,8 @@ export const cambio_vista_acceso = estatus =>({
 export const agregar_accesos= accesos=>({
     type:ADD_ACCESOS,
     accesos
+});
+export const cambio_acceso = folio =>({
+    type:CHANGE_ACCESO,
+    folio
 });

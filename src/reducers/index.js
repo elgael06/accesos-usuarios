@@ -12,7 +12,9 @@ import {
                 CHANGE_ID,
                 CHANGE_NOMBRE,
                 CHANGE_COMPLETO,
-                CHANGE_EMAIL
+                CHANGE_EMAIL,
+                CHANGE_ACCESO,
+                STATE_ACCESOS
             } from "./types.reducers";
 
 /***
@@ -60,8 +62,28 @@ const usuario                = (state={}      , actions) =>{
 } 
 const edicion                = (state=false , actions) => actions.type === EDICION                  ? actions.estatus  : state;
 const vista_accesos     = (state=false , actions) => actions.type === SHOW_ACCESSO     ? actions.estatus  : state;
-const accesos               = ( state=[]     , actions) => actions.type === ADD_ACCESOS         ? actions.accesos : state;
-
+const accesos               = ( state=[]     , actions) =>{
+    switch( actions.type ){
+        case ADD_ACCESOS:
+            return actions.accesos;
+        case CHANGE_ACCESO:
+            return state.map(acceso=>{
+                acceso.Sub_menus.map(sub=>{
+                    sub.Accesos.map(acc=>{
+                        if(acc.Folio_acceso=== actions.folio){
+                            acc.Estatus = acc.Estatus.search ("C")>-1 ? "V":"C" 
+                        }
+                        return acc
+                    })
+                    return sub
+                })
+                return acceso
+            })
+        default:
+            return state
+    }
+} 
+const estado_accesos = (state=false,actions)=>actions.type===STATE_ACCESOS ? actions.estado:state;
 const reducers = combineReducers({
     filtro_usuario,
     usuarios,
@@ -70,6 +92,7 @@ const reducers = combineReducers({
     edicion,
     vista_accesos,
     accesos,
+    estado_accesos
 });
 
 export default reducers;

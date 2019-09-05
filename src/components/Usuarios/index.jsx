@@ -3,12 +3,15 @@ import React from 'react'
 import Cargando from '../Cargando'
 //estylos
 import './main.scss'
+import { obtener_accesos_usuario } from '../../conexiones/index.conections'
 
-const Usuarios =({usuarios,carcando,evSeleccion,evTipo})=>{
+const Usuarios =({usuarios,carcando,evSeleccion,evTipo,agregarAccesos})=>{
     console.log(usuarios)
     //funciones
-    const onSeleccion =(tipo,usuario) =>{
+    const onSeleccion =async (tipo,usuario) =>{
         console.log("Seoeccion=>",usuario,tipo)
+        let accesos = await obtener_accesos_usuario(usuario.id_usuario) 
+        agregarAccesos(accesos)
         evSeleccion(usuario)
         evTipo(tipo)
     }
