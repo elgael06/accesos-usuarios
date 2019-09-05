@@ -5,7 +5,10 @@ import Usuarios from '../components/Usuarios';
 import { seleccionar_usuario, cambio_edicion, cambio_vista_acceso } from '../accions/index.actions';
 
 const mapStateProps=state=>({
-    usuarios:state.usuarios,
+    usuarios:state.usuarios.filter(e=>e.id_scoi.toString().toUpperCase().search(state.filtro_usuario.toUpperCase())>-1 || 
+    e.email_usuario.toString().toUpperCase().search(state.filtro_usuario.toUpperCase())>-1 || 
+    e.nombre_usuario.toString().toUpperCase().search(state.filtro_usuario.toUpperCase())>-1 ||
+    e.nombrecompleto_usuario.toString().toUpperCase().search(state.filtro_usuario.toUpperCase())>-1),
     carcando:state.carga_usuarios
 });
 

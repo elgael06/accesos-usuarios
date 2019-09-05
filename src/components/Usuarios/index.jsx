@@ -15,7 +15,7 @@ const Usuarios =({usuarios,carcando,evSeleccion,evTipo})=>{
     return (carcando?<Cargando/> : <div className="tile is-ancestor" id="contenedor-usuarios">
         {
             usuarios.map((usuario,index)=><div className="tile is-parent" key={usuario.id_scoi+"_"+index}>
-                <article className="tile is-child box notification is-light">
+                <article className="tile is-child box notification is-light card-usuario">
                     <figure className="image">
                         <img src={usuario.foto} alt="foto Usuario" />
                     </figure>

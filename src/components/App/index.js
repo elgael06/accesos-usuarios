@@ -9,11 +9,13 @@ import './App.scss';
 import Header from '../header';
 import Usuarios from '../../containers/Usuarios.container'
 import EdicionUsuario from '../../containers/EdicionUsuario.container'
+import BarraFiltro from '../../containers/BarraFiltro.container'
 
 function App() {
   return (
     <div className="App container">
       <Header />
+      <BarraFiltro/>
       <Usuarios />
       <EdicionUsuario/>
     </div>
