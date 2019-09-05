@@ -3,8 +3,20 @@ import React from 'react'
 import ModalBase from '../ModalBase';
 //estilos
 import './main.scss'
+import { guardar_editar_usuario } from '../../conexiones/index.conections';
 
 const EdicionUsuario =({mostrar,usuario,evCerrar,cambiar})=>{
+    //funciones
+    const onGuardar =async ()=>{
+        if(usuario.id_scoi && usuario.nombre_usuario && usuario.nombre_usuario){
+        let respuesta = await guardar_editar_usuario(usuario)
+            !respuesta || function(){
+                document.querySelector("#cargar-usuarios").click()
+                evCerrar()
+            }()
+        }else alert("Falta Colocar Datos Necesarios !!!\n[Nombre, Nombre Completo, ID SCOI].")
+    }
+
     return  !mostrar ||(<ModalBase titulo={`Edicion Usuario Folio : ${usuario.id_usuario}`} onCerrar={evCerrar} id={"modal-edicion"} >
         <div className="field is-horizontal" id="edicion-modal">
             <figure className="image w-50  float-left">
@@ -50,7 +62,7 @@ const EdicionUsuario =({mostrar,usuario,evCerrar,cambiar})=>{
             </div>
             <div className="columns m-1">
                 <span className="column p-1">
-                    <i className="button is-primary is-fullwidth float-left fa fa-save"> Guardar.</i>
+                    <i className="button is-primary is-fullwidth float-left fa fa-save" onClick={onGuardar}> Guardar.</i>
                 </span>
                 <span className="column p-1">
                     <i className="button is-danger is-fullwidth float-lg-right fa fa-close" onClick={evCerrar}> Cancelar.</i>

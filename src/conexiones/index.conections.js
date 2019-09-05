@@ -50,6 +50,10 @@ export const Actualizar_accesos = async (id,accesos)=>{
     return await contenedor_data(Axios.post(`${ip}api/Accesos_url?id_usuario=${id}`, accesos),"Error al Actualizar Accesos...")
 } 
 
+export const guardar_editar_usuario =async Usuario=>{
+    return await contenedor_data(Axios.post(`${ip}api/Usuarios_web`, Usuario),"Error al Actualizar Accesos...")
+} 
+
 
 /***
  * 01-800-900-2000
